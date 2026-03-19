@@ -18,7 +18,7 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 *Kendi ekran görüntülerinizi eklemek için aşağıdaki adımları izleyin:*
 
 1.  Projenizin kök dizininde `screenshots` adlı bir klasör oluşturun.
-2.  Ekran görüntülerinizi bu klasöre kaydedin (örneğin: `desktop.png`, `mobile.png`).
+2.  Ekran görüntülerinizi bu klasöre kaydedin (örneğin: `ekran.png`, `ekran2.png`).
 3.  Aşağıdaki yer tutucuları kendi dosya yollarınızla güncelleyin.
 
 | Masaüstü Görünümü | Mobil Görünümü |
@@ -71,9 +71,9 @@ Projeyi Cloudflare Pages üzerinde ücretsiz olarak yayınlamak için:
 1.  **Cloudflare Dashboard**'a girin.
 2.  **Workers & Pages** > **Create application** > **Pages** yolunu izleyin.
 3.  GitHub deponuzu bağlayın.
-4.  **Build settings** kısmını şu şekilde doldurun:
+4.  **Build settings** kısmını **TAM OLARAK** şu şekilde doldurun:
     - **Framework preset**: `None`
-    - **Build command**: (Boş bırakın)
+    - **Build command**: (BOŞ BIRAKIN - HERHANGİ BİR ŞEY YAZMAYIN) ⚠️
     - **Build output directory**: `public`
 5.  **Save and Deploy** butonuna tıklayın.
 

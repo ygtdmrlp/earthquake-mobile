@@ -1,6 +1,5 @@
 name = "quake-tracker"
 compatibility_date = "2024-03-19"
-pages_build_output_dir = "public"
 
-[vars]
-# Add environment variables if needed
+[pages]
+build_output_dir = "public"
