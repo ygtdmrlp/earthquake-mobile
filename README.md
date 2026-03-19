@@ -20,7 +20,7 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 | Masaüstü Görünümü | Mobil Görünümü |
 | :---: | :---: |
 |![Mobil](screenshots/ekran.png)
-![web](screenshots/ekran2.jpg)
+![web](screenshots/ekran2.png)
 
 
 
