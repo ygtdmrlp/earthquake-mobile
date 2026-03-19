@@ -15,15 +15,12 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 
 ## 📸 Ekran Görüntüleri
 
-*Kendi ekran görüntülerinizi eklemek için aşağıdaki adımları izleyin:*
 
-1.  Projenizin kök dizininde `screenshots` adlı bir klasör oluşturun.
-2.  Ekran görüntülerinizi bu klasöre kaydedin (örneğin: `desktop.png`, `mobile.png`).
-3.  Aşağıdaki yer tutucuları kendi dosya yollarınızla güncelleyin.
 
 | Masaüstü Görünümü | Mobil Görünümü |
 | :---: | :---: |
-|
+|![Mobil](screenshots/ekran.png)
+![web](screenshots/ekran2.jpg)
 
 
 
