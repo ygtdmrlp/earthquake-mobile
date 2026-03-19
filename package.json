@@ -1,0 +1,23 @@
+{
+  "name": "mobil-deprem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "pages:dev": "wrangler pages dev public",
+    "pages:deploy": "wrangler pages deploy public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "node-cache": "^5.1.2"
+  }
+}
