@@ -1,6 +1,6 @@
 # 🌍 QuakeTracker | Modern Deprem Takip Sistemi
 
-QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı olarak izlemek, analiz etmek ve görselleştirmek için tasarlanmış, **Trae AI** tarzında modern ve futuristik bir web uygulamasıdır.
+
 
 ## 🚀 Öne Çıkan Özellikler
 
@@ -17,8 +17,7 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 
 
 
-| Masaüstü Görünümü | Mobil Görünümü |
-| :---: | :---: |
+
 |![Mobil](screenshots/ekran.png)
 ![web](screenshots/ekran2.png)
 
@@ -61,20 +60,6 @@ Projeyi yerel makinenizde çalıştırmak için şu adımları izleyin:
 
 ---
 
-## ☁️ Cloudflare Pages ile Yayınlama
-
-Projeyi Cloudflare Pages üzerinde ücretsiz olarak yayınlamak için:
-
-1.  **Cloudflare Dashboard**'a girin.
-2.  **Workers & Pages** > **Create application** > **Pages** yolunu izleyin.
-3.  GitHub deponuzu bağlayın.
-4.  **Build settings** kısmını şu şekilde doldurun:
-    - **Framework preset**: `None`
-    - **Build command**: (Boş bırakın)
-    - **Build output directory**: `public`
-5.  **Save and Deploy** butonuna tıklayın.
-
-*Not: API istekleriniz `functions/api/earthquakes.js` dosyası üzerinden Cloudflare Functions olarak otomatik çalışacaktır.*
 
 ---
 
