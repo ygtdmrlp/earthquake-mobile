@@ -23,7 +23,7 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 
 | Masaüstü Görünümü | Mobil Görünümü |
 | :---: | :---: |
-| ![Masaüstü Ekran Görüntüsü](ekran.png) | ![Mobil Ekran Görüntüsü](ekran2.png) |
+| ![Masaüstü Ekran Görüntüsü]([ekran.png](https://github.com/ygtdmrlp/earthquake-mobile/blob/main/screenshots/ekran.png?raw=true)) | ![Mobil Ekran Görüntüsü](ekran2.png) |
 
 
 
