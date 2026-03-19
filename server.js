@@ -6,38 +6,52 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const cache = new NodeCache({ stdTTL: 60 }); // 1 minute cache
+const cache = new NodeCache({ stdTTL: 60 });
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
 
-// Kandilli Live Earthquakes API (Public endpoint example)
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 const KANDILLI_API = 'https://api.orhanaydogdu.com.tr/deprem/kandilli/live';
 
-app.get('/api/earthquakes', async (req, res) => {
+// API Handler
+const apiHandler = async (req, res) => {
     try {
         const cachedData = cache.get('earthquakes');
-        if (cachedData) {
-            return res.json(cachedData);
-        }
+        if (cachedData) return res.json(cachedData);
 
-        const response = await axios.get(KANDILLI_API);
-        const data = response.data;
+        const response = await axios.get(KANDILLI_API, { 
+            timeout: 15000,
+            headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
         
-        console.log(`Fetched ${data.result ? data.result.length : 0} earthquakes from API`);
-        
-        // Structure the data consistently
-        const earthquakes = data.result || [];
-        
-        cache.set('earthquakes', earthquakes);
-        res.json(earthquakes);
+        if (response.data && response.data.result) {
+            const earthquakes = response.data.result;
+            cache.set('earthquakes', earthquakes);
+            return res.json(earthquakes);
+        } else {
+            throw new Error('API format mismatch');
+        }
     } catch (error) {
-        console.error('Error fetching earthquake data:', error);
-        res.status(500).json({ error: 'Failed to fetch data' });
+        res.status(500).json({ error: 'Veri çekilemedi', details: error.message });
     }
+};
+
+/**
+ * CRITICAL FIX FOR CPANEL SUBFOLDERS
+ * This regex matches any path ending in /api/earthquakes
+ * Examples: /api/earthquakes, /deprem-sitesi/api/earthquakes, /app/api/earthquakes
+ */
+app.get(/.*\/api\/earthquakes$/, apiHandler);
+app.get('/api/earthquakes', apiHandler); // Fallback for root
+
+// Handle all other routes by serving index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server running on port ${port}`);
 });

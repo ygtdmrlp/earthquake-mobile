@@ -77,15 +77,21 @@ function initMap() {
 async function fetchEarthquakes() {
     console.log('Fetching earthquakes...');
     try {
-        const response = await fetch('/api/earthquakes');
-        if (!response.ok) throw new Error('Network response was not ok');
+        // Use ./ to ensure it stays within the current subfolder
+        const response = await fetch('./api/earthquakes');
         const data = await response.json();
+        
+        if (!response.ok) {
+            console.error('API Error:', data);
+            document.getElementById('earthquake-count').textContent = `Hata: ${data.details || response.statusText}`;
+            return;
+        }
+
+        console.log(`Received ${data.length} earthquakes, showing ${data.filter(eq => (parseFloat(eq.mag) || 0) >= userSettings.minMagnitude).length} (Min: ${userSettings.minMagnitude})`);
         
         if (!Array.isArray(data)) return;
 
-        // Filter by min magnitude
         const filteredData = data.filter(eq => (parseFloat(eq.mag) || 0) >= userSettings.minMagnitude);
-        console.log(`Received ${data.length} earthquakes, showing ${filteredData.length} (Min: ${userSettings.minMagnitude})`);
         
         // Check for new significant earthquakes and send push notification
         if (earthquakes.length > 0 && filteredData.length > 0) {
@@ -106,7 +112,7 @@ async function fetchEarthquakes() {
         updateUI();
     } catch (error) {
         console.error('Error fetching data:', error);
-        document.getElementById('earthquake-count').textContent = 'Bağlantı Hatası';
+        document.getElementById('earthquake-count').textContent = `Bağlantı Hatası: ${error.message}`;
     }
 }
 

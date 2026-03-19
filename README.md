@@ -64,22 +64,25 @@ Projeyi yerel makinenizde çalıştırmak için şu adımları izleyin:
 
 ---
 
-## ☁️ Cloudflare Pages ile Yayınlama
+## ⛅ Cloudflare Workers ile Yayınlama
 
-Projeyi Cloudflare Pages üzerinde ücretsiz olarak yayınlamak için:
+Projeyi Cloudflare Workers (Assets desteğiyle) üzerinde yayınlamak için:
 
-1.  **Cloudflare Dashboard**'a girin.
-2.  **Workers & Pages** > **Create application** > **Pages** yolunu izleyin.
-3.  GitHub deponuzu bağlayın.
-4.  **Build settings** kısmını **TAM OLARAK** şu şekilde doldurun:
-    - **Framework preset**: `None`
-    - **Build command**: (BOŞ BIRAKIN - HERHANGİ BİR ŞEY YAZMAYIN) ⚠️
-    - **Build output directory**: `public`
-5.  **Save and Deploy** butonuna tıklayın.
+1.  **Wrangler CLI**'ın yüklü olduğundan emin olun.
+2.  Terminalden Cloudflare hesabınıza giriş yapın:
+    ```bash
+    npx wrangler login
+    ```
+3.  Projeyi yayınlayın:
+    ```bash
+    npm run worker:deploy
+    ```
 
-*Not: API istekleriniz `functions/api/earthquakes.js` dosyası üzerinden Cloudflare Functions olarak otomatik çalışacaktır.*
+*Not: API istekleriniz `src/index.js` dosyası üzerinden, statik dosyalarınız ise `public` klasöründen otomatik olarak sunulacaktır.*
 
 ---
+
+## ☁️ Cloudflare Pages ile Yayınlama (Alternatif)
 
 ## 📄 Lisans
 
