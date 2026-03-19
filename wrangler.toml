@@ -1,4 +1,4 @@
-name = "quake-tracker"
+name = "earthquake-mobiles"
 main = "src/index.js"
 compatibility_date = "2024-03-19"
 
