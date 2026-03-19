@@ -25,7 +25,7 @@ QuakeTracker, Türkiye ve çevresindeki deprem aktivitelerini gerçek zamanlı o
 | :---: | :---: |
 | ![Masaüstü Ekran Görüntüsü](ekran.png) | ![Mobil Ekran Görüntüsü](ekran2.png) |
 
-> **İpucu**: GitHub'da resimlerinizi bir issue veya PR'a sürükleyip bırakarak aldığınız URL'leri de buraya yapıştırabilirsiniz.
+
 
 ---
 
